@@ -1,4 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dr70l53na0ywd"]
+[gd_scene load_steps=11 format=3 uid="uid://dr70l53na0ywd"]
+
+[ext_resource type="PackedScene" uid="uid://bgj4kmdbu3qxo" path="res://Scenes/Player/player.tscn" id="1_r150o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c1w88"]
 
@@ -22,18 +24,14 @@ size = Vector2(5, 5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_50glp"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vy5pj"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_bmxlf"]
-
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_idj7w")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.8435528, -0.004207935, -0.53703, 0.53704566, 0.008276751, 0.8435126, 0.0008954146, -0.99995697, 0.009241728, 0, 2.0031419, 0)
-light_color = Color(1, 0.38011768, 0.7301299, 1)
+transform = Transform3D(0.999602, 0.00063443574, -0.028203571, 0.020938363, 0.6533116, 0.7567996, 0.018905675, -0.75708896, 0.65303826, 0, 2.0031419, 0)
+light_color = Color(0.8588266, 0.47474724, 0.884208, 1)
 shadow_enabled = true
 
 [node name="floor" type="StaticBody3D" parent="."]
@@ -47,7 +45,7 @@ shape = SubResource("HeightMapShape3D_rgh2o")
 mesh = SubResource("PlaneMesh_pbw6q")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84754014, 0.4768827, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.342541, 0.4768827, -1.1822635)
 physics_material_override = SubResource("PhysicsMaterial_v1gob")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
@@ -56,11 +54,8 @@ shape = SubResource("BoxShape3D_jw32o")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("BoxMesh_50glp")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9459351, -1.6030086)
+[node name="Player" parent="." instance=ExtResource("1_r150o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9459351, 0.39438033)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-shape = SubResource("CapsuleShape3D_vy5pj")
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D"]
-sprite_frames = SubResource("SpriteFrames_bmxlf")
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.97858447, 0.20584553, 0, -0.20584553, 0.97858447, 0, 1.3495913, 1.3470645)
