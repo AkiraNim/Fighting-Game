@@ -1,6 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dr70l53na0ywd"]
+[gd_scene load_steps=14 format=3 uid="uid://dr70l53na0ywd"]
 
+[ext_resource type="Shader" uid="uid://bekwf6v4kyowg" path="res://Shaders/quadradoTeste.gdshader" id="1_idj7w"]
 [ext_resource type="PackedScene" uid="uid://bgj4kmdbu3qxo" path="res://Scenes/Player/player.tscn" id="1_r150o"]
+[ext_resource type="Script" uid="uid://dn2fx1xvidm8" path="res://Scripts/quadradoTeste.gd" id="2_kln2b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c1w88"]
 
@@ -21,6 +23,13 @@ size = Vector2(5, 5)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v1gob"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jw32o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kln2b"]
+render_priority = 0
+shader = ExtResource("1_idj7w")
+shader_parameter/time = 0.0
+shader_parameter/height_amplitude = 1.0
+shader_parameter/bend_amplitude = 0.2
 
 [sub_resource type="BoxMesh" id="BoxMesh_50glp"]
 
@@ -52,10 +61,12 @@ physics_material_override = SubResource("PhysicsMaterial_v1gob")
 shape = SubResource("BoxShape3D_jw32o")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+material_override = SubResource("ShaderMaterial_kln2b")
 mesh = SubResource("BoxMesh_50glp")
+script = ExtResource("2_kln2b")
 
 [node name="Player" parent="." instance=ExtResource("1_r150o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1727893, 0.32044685, -0.034841597)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.6635216, 0.74815726, 0, -0.74815726, 0.6635216, 0, 0.8803401, 1.3470645)
+transform = Transform3D(1, 0, 0, 0, 0.99382806, 0.11093125, 0, -0.11093125, 0.99382806, 0, 0.8803401, 1.3470645)
