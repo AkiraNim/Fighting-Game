@@ -18,7 +18,7 @@ func _physics_process(_delta):
 func handle_input():
 	var input_vector := Vector2.ZERO
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	input_vector.y = Input.get_action_strength("move_back") - Input.get_action_strength("move_forward")
+	input_vector.y = Input.get_action_strength("move_up") - Input.get_action_strength("move_down")
 	input_vector = input_vector.normalized()
 	
 	var forward = -global_transform.basis.z

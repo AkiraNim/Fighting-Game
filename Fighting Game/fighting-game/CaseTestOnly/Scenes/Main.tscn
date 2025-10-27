@@ -1,0 +1,166 @@
+[gd_scene load_steps=21 format=3 uid="uid://dr70l53na0ywd"]
+
+[ext_resource type="Shader" uid="uid://bekwf6v4kyowg" path="res://CaseTestOnly/Shaders/quadradoTeste.gdshader" id="1_idj7w"]
+[ext_resource type="Shader" uid="uid://bwmi1xi2wojiw" path="res://CaseTestOnly/Shaders/quadrado2Test.gdshader" id="1_kln2b"]
+[ext_resource type="Script" uid="uid://dn2fx1xvidm8" path="res://CaseTestOnly/Scripts/quadradoTeste.gd" id="2_kln2b"]
+[ext_resource type="Script" uid="uid://lk2j5261vw7v" path="res://CaseTestOnly/Scripts/Player/player.gd" id="4_v1gob"]
+[ext_resource type="SpriteFrames" uid="uid://ccvlfdcrc8h6u" path="res://SpriteFrames/Kelara.tres" id="5_pbw6q"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c1w88"]
+
+[sub_resource type="Sky" id="Sky_r150o"]
+sky_material = SubResource("ProceduralSkyMaterial_c1w88")
+
+[sub_resource type="Environment" id="Environment_idj7w"]
+sky = SubResource("Sky_r150o")
+ambient_light_source = 3
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kln2b"]
+
+[sub_resource type="HeightMapShape3D" id="HeightMapShape3D_rgh2o"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pbw6q"]
+size = Vector2(5, 5)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rgh2o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jw32o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pbw6q"]
+render_priority = 0
+shader = ExtResource("1_idj7w")
+shader_parameter/axis = Vector3(0, 1, 0)
+shader_parameter/center = Vector3(0, 0, 0)
+shader_parameter/region_start = -1.0
+shader_parameter/region_end = 1.0
+shader_parameter/twist_max_deg = 80.0
+shader_parameter/edge_softness = 1.0
+shader_parameter/use_time = true
+shader_parameter/speed = 1.0
+shader_parameter/progress = 0.0
+shader_parameter/pitch_per_turn = 1.5
+shader_parameter/along_power = 3.91400018265512
+
+[sub_resource type="BoxMesh" id="BoxMesh_v1gob"]
+
+[sub_resource type="GDScript" id="GDScript_jw32o"]
+script/source = "extends MeshInstance3D
+
+var t = 0.0
+
+func _process(delta):
+	t += delta
+	if material_override:
+		material_override.set_shader_parameter(\"time\", t)
+"
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v1gob"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kln2b"]
+render_priority = 0
+shader = ExtResource("1_kln2b")
+shader_parameter/up_axis = Vector3(0, 1, 0)
+shader_parameter/ground_height = 0.0
+shader_parameter/influence_height = 1.0
+shader_parameter/falloff_power = 0.33300000929773
+shader_parameter/right_dir = Vector3(1, 0, 0)
+shader_parameter/max_down = 0.4
+shader_parameter/max_up = 0.6
+shader_parameter/lateral_ratio = 0.5110000242725
+shader_parameter/period = 1.6
+shader_parameter/ease_softness = 0.8610000408975
+
+[sub_resource type="BoxMesh" id="BoxMesh_50glp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vy5pj"]
+radius = 0.13183594
+height = 0.38391113
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_idj7w")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.9642612, -0.18937811, -0.18530105, 0.2638784, 0.7493661, 0.6073045, 0.023848152, -0.63449717, 0.77255744, 0, 2.0031419, -2.3786378)
+light_color = Color(0.87362665, 0.55893767, 0.37521625, 1)
+shadow_enabled = true
+
+[node name="floor" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_kln2b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("HeightMapShape3D_rgh2o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
+mesh = SubResource("PlaneMesh_pbw6q")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.342541, 0.4768827, -1.1822635)
+physics_material_override = SubResource("PhysicsMaterial_rgh2o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_jw32o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+material_override = SubResource("ShaderMaterial_pbw6q")
+mesh = SubResource("BoxMesh_v1gob")
+script = SubResource("GDScript_jw32o")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43980122, 0.4768827, -1.1822635)
+physics_material_override = SubResource("PhysicsMaterial_v1gob")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+shape = SubResource("BoxShape3D_jw32o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+material_override = SubResource("ShaderMaterial_kln2b")
+mesh = SubResource("BoxMesh_50glp")
+script = ExtResource("2_kln2b")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8793662, 0.47614616, 0, -0.47614616, 0.8793662, 0, 1.4713864, 1.4236026)
+projection = 1
+fov = 71.20773
+size = 3.008
+far = 38.87
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.97284067, 0.23147629, 0, -0.23147629, 0.97284067, -0.3824617, 0.2472938, 0.26654977)
+script = ExtResource("4_v1gob")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, -0.0317993, 0)
+shape = SubResource("CapsuleShape3D_vy5pj")
+
+[node name="PlayerSprite" type="AnimatedSprite3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.99461275, -0.103660524, 0, 0.103660524, 0.99461275, 0, 0.104938954, 0.024969012)
+shaded = true
+double_sided = false
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = ExtResource("5_pbw6q")
+animation = &"idle"
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": true,
+"layer_section": false,
+"output_section": true,
+"pending_changes": {},
+"slice_section": true
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"scale": "1.0",
+"should_round_fps": true,
+"slice": "",
+"source": "res://Assets/Asprite/Kelara/Kelara.aseprite",
+"source_uid": 2360664529091636661
+}
+metadata/_aseprite_wizard_source_file_hash_ = "944bf2067dd8ec539cdf295a994549da"

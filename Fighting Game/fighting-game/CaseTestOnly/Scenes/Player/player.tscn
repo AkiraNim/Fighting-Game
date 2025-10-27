@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgj4kmdbu3qxo"]
 
-[ext_resource type="Script" uid="uid://lk2j5261vw7v" path="res://Scripts/Player/player.gd" id="1_xpcdj"]
+[ext_resource type="Script" uid="uid://lk2j5261vw7v" path="res://CaseTestOnly/Scripts/Player/player.gd" id="1_xpcdj"]
 [ext_resource type="SpriteFrames" uid="uid://ccvlfdcrc8h6u" path="res://SpriteFrames/Kelara.tres" id="2_xpcdj"]
-[ext_resource type="Script" uid="uid://dfxahaixbbhf4" path="res://Scenes/Player/player_sprite.gd" id="5_dd0ac"]
+[ext_resource type="Script" uid="uid://dfxahaixbbhf4" path="res://CaseTestOnly/Scenes/Player/player_sprite.gd" id="5_dd0ac"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vy5pj"]
 radius = 0.13183594
@@ -23,6 +23,4 @@ texture_filter = 2
 sprite_frames = ExtResource("2_xpcdj")
 animation = &"run"
 autoplay = "idle"
-frame = 1
-frame_progress = 0.8655046
 script = ExtResource("5_dd0ac")
