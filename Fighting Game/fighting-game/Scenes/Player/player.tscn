@@ -1,129 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://bgj4kmdbu3qxo"]
+[gd_scene load_steps=5 format=3 uid="uid://bgj4kmdbu3qxo"]
 
 [ext_resource type="Script" uid="uid://lk2j5261vw7v" path="res://Scripts/Player/player.gd" id="1_xpcdj"]
-[ext_resource type="Texture2D" uid="uid://i0rlfqxxmf0c" path="res://Characters/Streets of Fight files/Streets of Fight files/Assets/Spritesheets/Brawler Girl/idle.png" id="2_mtuoh"]
-[ext_resource type="Texture2D" uid="uid://cnivlapolmmwj" path="res://Characters/Streets of Fight files/Streets of Fight files/Assets/Spritesheets/Brawler Girl/walk.png" id="3_htcer"]
+[ext_resource type="SpriteFrames" uid="uid://ccvlfdcrc8h6u" path="res://SpriteFrames/Kelara.tres" id="2_xpcdj"]
 [ext_resource type="Script" uid="uid://dfxahaixbbhf4" path="res://Scenes/Player/player_sprite.gd" id="5_dd0ac"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vy5pj"]
 radius = 0.13183594
 height = 0.47973633
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rgh2o"]
-atlas = ExtResource("2_mtuoh")
-region = Rect2(0, 0, 96, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pbw6q"]
-atlas = ExtResource("2_mtuoh")
-region = Rect2(96, 0, 96, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v1gob"]
-atlas = ExtResource("2_mtuoh")
-region = Rect2(192, 0, 96, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jw32o"]
-atlas = ExtResource("2_mtuoh")
-region = Rect2(288, 0, 96, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_50glp"]
-atlas = ExtResource("3_htcer")
-region = Rect2(0, 0, 96, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vy5pj"]
-atlas = ExtResource("3_htcer")
-region = Rect2(96, 0, 96, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bmxlf"]
-atlas = ExtResource("3_htcer")
-region = Rect2(192, 0, 96, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4kpch"]
-atlas = ExtResource("3_htcer")
-region = Rect2(288, 0, 96, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_grg3l"]
-atlas = ExtResource("3_htcer")
-region = Rect2(384, 0, 96, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_frkhe"]
-atlas = ExtResource("3_htcer")
-region = Rect2(480, 0, 96, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1p5hy"]
-atlas = ExtResource("3_htcer")
-region = Rect2(576, 0, 96, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h1m7h"]
-atlas = ExtResource("3_htcer")
-region = Rect2(672, 0, 96, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_erwvk"]
-atlas = ExtResource("3_htcer")
-region = Rect2(768, 0, 96, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2w5on"]
-atlas = ExtResource("3_htcer")
-region = Rect2(864, 0, 96, 63)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_bmxlf"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rgh2o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pbw6q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v1gob")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jw32o")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_50glp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vy5pj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bmxlf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4kpch")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_grg3l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_frkhe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1p5hy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h1m7h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_erwvk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2w5on")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_xpcdj")
@@ -137,7 +20,9 @@ shaded = true
 double_sided = false
 alpha_cut = 2
 texture_filter = 2
-sprite_frames = SubResource("SpriteFrames_bmxlf")
-animation = &"walk"
-frame_progress = 0.48080838
+sprite_frames = ExtResource("2_xpcdj")
+animation = &"run"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.8655046
 script = ExtResource("5_dd0ac")

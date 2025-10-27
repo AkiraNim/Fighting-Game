@@ -36,7 +36,7 @@ func update_animation():
 	if velocity.length() < 0.1:
 		sprite.play("idle")
 	else:
-		sprite.play("walk")
+		sprite.play("run")
 
 func update_facing():
 	# Apenas espelhar scale.x, pois Billboard sempre olha para a câmera
