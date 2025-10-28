@@ -507,7 +507,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_50glp")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1",
 "speed": 10.0
 }, {
@@ -533,7 +533,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h1m7h")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2",
 "speed": 10.0
 }, {
@@ -556,7 +556,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fq0cl")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack3",
 "speed": 10.0
 }, {
@@ -576,7 +576,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_aht7i")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack4",
 "speed": 10.0
 }, {
@@ -614,7 +614,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vvnwx")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack5",
 "speed": 10.0
 }, {
@@ -661,7 +661,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7sj7i")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack6",
 "speed": 10.0
 }, {
@@ -714,7 +714,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_semxg")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack7",
 "speed": 10.0
 }, {
@@ -731,7 +731,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4clwk")
 }],
-"loop": true,
+"loop": false,
 "name": &"damage",
 "speed": 10.0
 }, {
@@ -769,7 +769,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c5nnb")
 }],
-"loop": true,
+"loop": false,
 "name": &"defeat",
 "speed": 10.0
 }, {
@@ -859,7 +859,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleSwing",
-"speed": 10.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -874,7 +874,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mhc43")
 }],
-"loop": true,
+"loop": false,
 "name": &"jumpSideIn",
 "speed": 10.0
 }, {
@@ -891,7 +891,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rwa6c")
 }],
-"loop": true,
+"loop": false,
 "name": &"jumpSideOut",
 "speed": 10.0
 }, {
@@ -905,7 +905,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3d2lr")
 }],
-"loop": true,
+"loop": false,
 "name": &"parry",
 "speed": 10.0
 }, {

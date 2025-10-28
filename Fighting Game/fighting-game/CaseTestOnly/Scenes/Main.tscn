@@ -121,10 +121,10 @@ mesh = SubResource("BoxMesh_50glp")
 script = ExtResource("2_kln2b")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.8793662, 0.47614616, 0, -0.47614616, 0.8793662, 0, 1.4713864, 1.4236026)
+transform = Transform3D(1, 0, 0, 0, 0.82019186, 0.5720886, 0, -0.5720886, 0.82019186, -0.37474, 1.8756299, 2.1622376)
 projection = 1
 fov = 71.20773
-size = 3.008
+size = 1.066
 far = 38.87
 
 [node name="Player" type="CharacterBody3D" parent="."]
@@ -143,12 +143,15 @@ alpha_cut = 2
 texture_filter = 0
 sprite_frames = ExtResource("5_pbw6q")
 animation = &"idle"
+frame_progress = 0.76414746
 metadata/_aseprite_wizard_interface_config_ = {
-"animation_section": true,
+"animation_section": false,
 "layer_section": false,
-"output_section": true,
-"pending_changes": {},
-"slice_section": true
+"output_section": false,
+"pending_changes": {
+"source_uid": 4112992302742487787
+},
+"slice_section": false
 }
 metadata/_aseprite_wizard_config_ = {
 "embed_tex": true,
