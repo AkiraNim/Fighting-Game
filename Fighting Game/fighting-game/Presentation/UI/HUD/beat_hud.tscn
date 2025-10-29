@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://8ep10qcdcqbs"]
+
+[node name="BeatHud" type="Node2D"]
