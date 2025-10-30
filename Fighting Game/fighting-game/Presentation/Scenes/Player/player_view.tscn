@@ -1,3 +1,40 @@
-[gd_scene format=3 uid="uid://cd00m1nd0gq7y"]
+[gd_scene load_steps=3 format=3 uid="uid://cd00m1nd0gq7y"]
+
+[ext_resource type="SpriteFrames" uid="uid://ccvlfdcrc8h6u" path="res://SpriteFrames/Kelara.tres" id="1_pyetq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qjcfv"]
+radius = 0.078125
+height = 0.43133545
 
 [node name="PlayerView" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CharacterBody3D"]
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = ExtResource("1_pyetq")
+animation = &"idle"
+frame_progress = 0.42636985
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"scale": "1.0",
+"should_round_fps": true,
+"slice": "",
+"source": "res://Assets/Aseprite/Kelara/Kelara.aseprite",
+"source_uid": 2360664529091636661
+}
+metadata/_aseprite_wizard_source_file_hash_ = "df5283ca4e7a4a2d76b35efce3d04b14"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013336182, 0)
+shape = SubResource("CapsuleShape3D_qjcfv")

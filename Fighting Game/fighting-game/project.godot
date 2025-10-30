@@ -10,13 +10,24 @@ config_version=5
 
 [application]
 
-config/name="Fighting Game"
+config/name="Beating Up"
+run/main_scene="uid://frd0uluithcc"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+run/max_fps=120
 config/icon="res://icon.svg"
 
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+EventBus="*res://Core/EventBus/event_bus.gd"
+InputReader="*res://Core/Inputs/input_reader.gd"
+CompositionRoot="*res://Core/Bootstrap/composition_root.gd"
+PhysicsService="*res://Services/Physics/physics_service.gd"
+RenderService="*res://Services/Rendering/render_service.gd"
+AnimationService="*res://Services/Rendering/animation_service.gd"
+AudioService="*res://Services/Audio/audio_service.gd"
+PauseController="*res://Controllers/pause_controller.gd"
+UiController="*res://Controllers/ui_controller.gd"
 
 [dialogic]
 
@@ -89,6 +100,11 @@ dialogic_default_action={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_render/layer_1="PlayerLayer"
+3d_physics/layer_1="PlayerLayer"
 
 [rendering]
 

@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://frd0uluithcc"]
+
+[ext_resource type="PackedScene" uid="uid://clagk4nf10ktq" path="res://Presentation/Scenes/Stages/stage_view.tscn" id="1_0380j"]
+[ext_resource type="PackedScene" uid="uid://cd00m1nd0gq7y" path="res://Presentation/Scenes/Player/player_view.tscn" id="2_x67bs"]
+[ext_resource type="PackedScene" uid="uid://do4h2elj1fay" path="res://Presentation/Scenes/Camera/game_camera.tscn" id="3_bsvxi"]
+[ext_resource type="PackedScene" uid="uid://p3gd0omsg54w" path="res://Presentation/UI/HUD/hud.tscn" id="4_n2xcg"]
+
+[node name="MainScene" type="Node3D"]
+
+[node name="StageView" parent="." instance=ExtResource("1_0380j")]
+
+[node name="PlayerView" parent="." instance=ExtResource("2_x67bs")]
+
+[node name="GameCamera" parent="." instance=ExtResource("3_bsvxi")]
+
+[node name="Hud" parent="." instance=ExtResource("4_n2xcg")]
