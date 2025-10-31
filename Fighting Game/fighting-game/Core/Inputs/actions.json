@@ -1,1 +1,119 @@
-null
+{
+	"version": "1.0.0",
+	"default_deadz": 0.18,
+	"actions": [
+		{
+			"name": "ui_up",
+			"type": "digital",
+			"bindings": [
+				{ "device": "keyboard", "key": "Up" },
+				{ "device": "keyboard", "key": "W" },
+				{ "device": "gamepad",  "button": "dpad_up" }
+			]
+		},
+		{
+			"name": "ui_down",
+			"type": "digital",
+			"bindings": [
+				{ "device": "keyboard", "key": "Down" },
+				{ "device": "keyboard", "key": "S" },
+				{ "device": "gamepad",  "button": "dpad_down" }
+			]
+		},
+		{
+			"name": "ui_left",
+			"type": "digital",
+			"bindings": [
+				{ "device": "keyboard", "key": "Left" },
+				{ "device": "keyboard", "key": "A" },
+				{ "device": "gamepad",  "button": "dpad_left" }
+			]
+		},
+		{
+			"name": "ui_right",
+			"type": "digital",
+			"bindings": [
+				{ "device": "keyboard", "key": "Right" },
+				{ "device": "keyboard", "key": "D" },
+				{ "device": "gamepad",  "button": "dpad_right" }
+			]
+		},
+		{
+			"name": "ui_accept",
+			"type": "digital",
+			"bindings": [
+				{ "device": "keyboard", "key": "Enter" },
+				{ "device": "keyboard", "key": "Space" },
+				{ "device": "gamepad",  "button": "button_south" }
+			]
+		},
+		{
+			"name": "ui_cancel",
+			"type": "digital",
+			"bindings": [
+				{ "device": "keyboard", "key": "Escape" },
+				{ "device": "keyboard", "key": "Backspace" },
+				{ "device": "gamepad",  "button": "button_east" }
+			]
+		},
+		{
+			"name": "pause",
+			"type": "digital",
+			"bindings": [
+				{ "device": "keyboard", "key": "Escape" },
+				{ "device": "gamepad", "button": "start" }
+			]
+		},
+		{
+			"name": "attack_light",
+			"type": "digital",
+			"bindings": [
+				{ "device": "keyboard", "key": "J" },
+				{ "device": "gamepad", "button": "button_west" },
+				{ "device": "mouse", "button": "button_left" }
+			]
+		},
+		{
+			"name": "attack_heavy",
+			"type": "digital",
+			"bindings": [
+				{ "device": "keyboard", "key": "K" },
+				{ "device": "gamepad", "button": "button_north" },
+				{ "device": "mouse", "button": "button_right" }
+			]
+		},
+		{
+			"name": "parry",
+			"type": "digital",
+			"bindings": [
+				{ "device": "keyboard", "key": "L" },
+				{ "device": "gamepad", "button": "button_east" },
+				{ "device": "mouse", "button": "button_middle" }
+			]
+		},
+		{
+			"name": "move_vertical",
+			"type": "axis",
+			"deadz": 0.18,
+			"bindings": [
+				{ "device": "keyboard", "key": "Up",   "scale": -1 },
+				{ "device": "keyboard", "key": "W",    "scale": -1 },
+				{ "device": "keyboard", "key": "Down", "scale":  1 },
+				{ "device": "keyboard", "key": "S",    "scale":  1 },
+				{ "device": "gamepad",  "axis": "left_y", "scale": 1, "deadz": 0.18 }
+			]
+		},
+		{
+			"name": "move_horizontal",
+			"type": "axis",
+			"deadz": 0.18,
+			"bindings": [
+				{ "device": "keyboard", "key": "Left",  "scale": -1 },
+				{ "device": "keyboard", "key": "A",     "scale": -1 },
+				{ "device": "keyboard", "key": "Right", "scale":  1 },
+				{ "device": "keyboard", "key": "D",     "scale":  1 },
+				{ "device": "gamepad",  "axis": "left_x", "scale": 1, "deadz": 0.18 }
+			]
+		}
+	]
+}

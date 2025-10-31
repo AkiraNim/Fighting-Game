@@ -1,3 +1,11 @@
 [gd_scene format=3 uid="uid://do4h2elj1fay"]
 
 [node name="GameCamera" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.95733464, 0.28898165, 0, -0.28898165, 0.95733464, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03545946, 0.8977778)
+projection = 1
+current = true
+size = 4.0
+far = 174.72

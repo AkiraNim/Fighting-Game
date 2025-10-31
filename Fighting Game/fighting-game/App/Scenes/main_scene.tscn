@@ -14,6 +14,7 @@
 [node name="PlayerView" parent="." instance=ExtResource("2_x67bs")]
 
 [node name="GameCamera" parent="." instance=ExtResource("3_bsvxi")]
+transform = Transform3D(1, 0, 0, 0, 0.95733464, 0.28898165, 0, -0.28898165, 0.95733464, 0, 0.96605885, 1.581291)
 
 [node name="Hud" parent="." instance=ExtResource("4_n2xcg")]
 
