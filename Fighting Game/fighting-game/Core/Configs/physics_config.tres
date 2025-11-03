@@ -1,3 +1,6 @@
-[gd_resource type="Resource" format=3 uid="uid://b70vr13jiacv1"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://b65robykfcfqu"]
+
+[ext_resource type="Script" uid="uid://53sxd8phrj0v" path="res://Core/Configs/physics_config.gd" id="1_irwbe"]
 
 [resource]
+script = ExtResource("1_irwbe")

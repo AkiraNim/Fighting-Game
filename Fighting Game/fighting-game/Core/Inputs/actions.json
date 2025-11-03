@@ -92,6 +92,14 @@
 			]
 		},
 		{
+			"name": "jump",
+			"type": "digital",
+			"bindings": [
+				{ "device": "keyboard", "key": "space" },
+				{ "device": "gamepad", "button": "button_south" }
+			]
+		},
+		{
 			"name": "move_vertical",
 			"type": "axis",
 			"deadz": 0.18,
